@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Toggle Switch Styling */
+        .toggle-checkbox {
+            display: none;
+        }
+
+        .toggle-label {
+            display: block;
+            position: relative;
+            width: 50px;
+            height: 26px;
+            cursor: pointer;
+        }
+
+        .toggle-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-checkbox:checked + .toggle-label .toggle-inner {
+            background-color: #4299e1; /* Change color when toggled on */
+        }
+
+        .toggle-switch {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .toggle-checkbox:checked + .toggle-label .toggle-switch {
+            transform: translateX(24px);
+        }
+        .custom-bg-color {
+            background-color: #8cb1ff99; 
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex ">
+        <img class="w-6 h-6 ml-3 mr-10 mt-3" src="images/BackArrow.jpeg" alt="" onclick="goBackToGoals()">
+        <h1 class="text-2xl font-semibold text-center mt-2">Workout Tracker</h1>
+    </div>
+    <div class="mx-4">
+        <img class="mt-20" src="images/Chart.jpeg" alt="" onclick="redirectToSchedule()">
+
+        <img class="mt-5" src="images/Note.jpeg" alt="">
+    </div>
+    
+    <div class="flex justify-between items-center mx-4 mt-10">
+        <h1 class="text-xl font-bold">Upcoming Workout</h1>
+        <span class="text-sm text-gray-700">See more</span>
+    </div>
+    
+    <div class="relative flex mt-8 mx-4 rounded-lg bg-gray-100"">
+        <!-- Image -->
+        <img class="w-16 h-16" src="images/Yoga1.jpeg" alt="">
+        
+        <!-- Texts -->
+        <div class="ml-3">
+            <h2 class="text-lg font-semibold">Full Body Workout</h2>
+            <p class="text-sm">Today 3pm</p>
+        </div>
+        
+        <!-- Toggle Button -->
+        <div class="ml-12 mt-5">
+            <input type="checkbox" id="toggle1" class="toggle-checkbox">
+            <label for="toggle1" class="toggle-label">
+                <div class="toggle-inner"></div>
+                <div class="toggle-switch"></div>
+            </label>
+        </div>
+    </div>
+    
+    <div class="relative flex mt-2 mx-4 rounded-lg bg-gray-100"">
+        <!-- Image -->
+        <img class="w-16 h-16" src="images/Yoga2.jpeg" alt="">
+        
+        <!-- Texts -->
+        <div class="ml-3">
+            <h2 class="text-lg font-semibold">Upper Body Workout</h2>
+            <p class="text-sm">4 Feb, 3:30 pm</p>
+        </div>
+        
+        <!-- Toggle Button -->
+        <div class="ml-12 mt-5">
+            <input type="checkbox" id="toggle2" class="toggle-checkbox">
+            <label for="toggle2" class="toggle-label">
+                <div class="toggle-inner"></div>
+                <div class="toggle-switch"></div>
+            </label>
+        </div>
+    </div>
+    <div class="flex justify-between items-center mx-4 mt-10">
+        <h1 class="text-xl font-bold">What Do You Want to Train</h1>
+        
+    </div>
+    <div class="relative mt-8 mx-4 custom-bg-color">
+        <!-- Second Div -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-20 h-20 rounded-full bg-opacity-100 bg-gray-300 mt-24">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </div>
+          
+        
+        <!-- First Div -->
+        <div class="flex">
+            <!-- Texts -->
+            <div class="ml-3">
+                <h2 class="text-lg font-semibold">Full Body Workout</h2>
+                <p class="text-sm">Arms</p>
+                <p class="text-sm">Chest</p>
+            </div>
+            
+            <!-- Image -->
+            <img class="w-24 h-24 ml-16" src="images/Yoga3.jpeg" alt="">
+        </div>
+    </div>
+    
+</body>
+<script>
+    function redirectToSchedule() {
+      window.location.href = 'schedule.html';
+    }
+
+    function goBackToGoals() {
+            window.location.href = 'Goals.html';
+        }
+  </script>
+  
+</html>
